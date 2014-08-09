@@ -158,6 +158,9 @@ class RedisSessionStore < ActionDispatch::Session::AbstractStore
   end
 
   # Uses built-in JSON library to encode/decode session
+  # Changed by xuzheng @ 2014.08.09
+  # See: http://making.change.org/post/52724140959/sharing-session-with-rails-3-2-and-friends
+  # Also see: http://blog.qdaxb.me/php%E4%B8%8Eruby%E5%85%B1%E4%BA%ABsession%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/
   class JsonSerializer
     SERIALIZABLE = [String, TrueClass, FalseClass, NilClass, Numeric, Date, Time, Symbol]
     MARSHAL_INDICATORS = ["\x04", "\004", "\u0004"]
